@@ -1,0 +1,22 @@
+{
+  "name": "cruiser",
+  "version": "1.0.0",
+  "description": "exotic tour planner",
+  "main": "app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Md-Mudassir/Cruiser.git"
+  },
+  "author": "Mohammed Mudassir, Parvez Shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Md-Mudassir/Cruiser/issues"
+  },
+  "homepage": "https://github.com/Md-Mudassir/Cruiser#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

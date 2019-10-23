@@ -5,15 +5,12 @@ const fs = require('fs');
 const PORT = process.env.PORT || 3700;
 
 app.use(express.json());
-// app.use('/', (req, res) => {
-//   res.status(200).json({ message: 'Hello' });
-// });
 
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
 
-app.get('/api/v1/tours', (req, res) => {
+const getAllTours = (req, res) => {
   res.status(200).json({
     message: 'success',
     results: tours.length,
@@ -21,15 +18,15 @@ app.get('/api/v1/tours', (req, res) => {
       tours: tours
     }
   });
-});
+};
 
-app.get('/api/v1/tours/:id', (req, res) => {
+const getTour = (req, res) => {
   console.log(req.params);
 
   const id = req.params.id * 1;
   const tour = tours.find(el => el.id === id);
 
-  if (id > tours.length) {
+  if (!tour) {
     res.status(404).json({
       message: 'not found'
     });
@@ -41,9 +38,9 @@ app.get('/api/v1/tours/:id', (req, res) => {
       }
     });
   }
-});
+};
 
-app.post('/api/v1/tours', (req, res) => {
+const addTour = (req, res) => {
   //   console.log(req.body);
   const newId = tours[tours.length - 1].id + 1;
   const newTour = Object.assign({ id: newId }, req.body);
@@ -61,7 +58,14 @@ app.post('/api/v1/tours', (req, res) => {
       });
     }
   );
-});
+};
+
+app.get('/api/v1/tours', getAllTours);
+
+app.get('/api/v1/tours/:id', getTour);
+
+app.post('/api/v1/tours', addTour);
+
 app.listen(PORT, () => {
   console.log(`Started ${PORT}`);
 });

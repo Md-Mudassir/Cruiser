@@ -6,6 +6,11 @@ const PORT = process.env.PORT || 3700;
 
 app.use(express.json());
 
+app.use((req, res, next) => {
+  console.log('hello from middleware');
+  next();
+});
+
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`)
 );
@@ -41,7 +46,6 @@ const getTour = (req, res) => {
 };
 
 const addTour = (req, res) => {
-  //   console.log(req.body);
   const newId = tours[tours.length - 1].id + 1;
   const newTour = Object.assign({ id: newId }, req.body);
   tours.push(newTour);
@@ -60,11 +64,27 @@ const addTour = (req, res) => {
   );
 };
 
-app.get('/api/v1/tours', getAllTours);
-
+const getAllUsers = (req, res) => {
+  res.status(500).json({
+    status: 'error',
+    msg: 'not yet defined'
+  });
+};
 app.get('/api/v1/tours/:id', getTour);
 
-app.post('/api/v1/tours', addTour);
+app
+  .route('/api/v1/tours')
+  .get(getAllTours)
+  .post(addTour);
+
+app.route('/api/v1/users').get(getAllUsers);
+// .post(createUser);
+
+// app
+//   .route('/api/v1/users/:id')
+//   .get(getUser)
+//   .patch(updateUser)
+//   .delete(deleteUser);
 
 app.listen(PORT, () => {
   console.log(`Started ${PORT}`);

@@ -28,12 +28,19 @@ app.get('/api/v1/tours/:id', (req, res) => {
 
   const id = req.params.id * 1;
   const tour = tours.find(el => el.id === id);
-  res.status(200).json({
-    message: 'success',
-    data: {
-      tour
-    }
-  });
+
+  if (id > tours.length) {
+    res.status(404).json({
+      message: 'not found'
+    });
+  } else {
+    res.status(200).json({
+      message: 'success',
+      data: {
+        tour
+      }
+    });
+  }
 });
 
 app.post('/api/v1/tours', (req, res) => {

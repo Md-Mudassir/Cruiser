@@ -1,39 +1,38 @@
+const path = require('path');
 const express = require('express');
+const cookieParser = require('cookie-parser');
+
+const AppError = require('./utils/appError');
+const globalErrorHandler = require('./controllers/errorController');
+const tourRouter = require('./routes/tourRoutes');
+const userRouter = require('./routes/userRoutes');
+const reviewRouter = require('./routes/reviewRoutes');
+const viewRouter = require('./routes/viewRoutes');
+
 const app = express();
-const dotenv = require('dotenv');
 
-const PORT = process.env.PORT || 3700;
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
 
-dotenv.config({ path: './config.env' });
-console.log(process.env);
-app.use(express.json());
+// 1) GLOBAL MIDDLEWARES
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use((req, res, next) => {
-  console.log('hello from middleware');
-  next();
-});
+// Body parser, reading data from body into req.body
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+app.use(cookieParser());
 
-const tourRouter = require('./public/routes/tourdetails');
-
-const getAllUsers = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    msg: 'not yet defined'
-  });
-};
-
-app.route('/api/v1/users').get(getAllUsers);
-// .post(createUser);
-
-// app
-//   .route('/api/v1/users/:id')
-//   .get(getUser)
-//   .patch(updateUser)
-//   .delete(deleteUser);
-// router.get('/api/v1/tours/:id', getTour);
-
+// 3) ROUTES
+app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
+app.use('/api/v1/reviews', reviewRouter);
 
-app.listen(PORT, () => {
-  console.log(`Started ${PORT}`);
+app.all('*', (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
+
+app.use(globalErrorHandler);
+
+module.exports = app;

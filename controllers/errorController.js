@@ -36,4 +36,4 @@ const sendErrorDev = (err, req, res) => {
       stack: err.stack
     });
   }
-
+};

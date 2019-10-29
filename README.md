@@ -21,7 +21,7 @@ The application suggests the tour packages depending upon the conditions of the 
 This is a normal Web Application, so there is no need for any installations.Just Download the files in the repository as they are Open source and run the Index file in any browser and enjoy the Application.
 
 ## Authors:
-Mohammed Mudassir
+Mohammed Mudassir,
 Parvez Shah
 
  # THANK YOU

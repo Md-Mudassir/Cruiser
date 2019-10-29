@@ -1,14 +1,22 @@
 {
-  "name": "3-asynchronous-js",
+  "name": "cruiser",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "exotic tour planner",
+  "main": "app",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Md-Mudassir/Cruiser.git"
+  },
+  "author": "Mohammed Mudassir, Parvez Shah",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Md-Mudassir/Cruiser/issues"
+  },
+  "homepage": "https://github.com/Md-Mudassir/Cruiser#readme",
   "dependencies": {
-    "superagent": "^5.0.2"
+    "express": "^4.17.1"
   }
 }

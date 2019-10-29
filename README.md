@@ -1,8 +1,7 @@
 
 # Cruiser
 
-## Abstract
-It displays the tour package to user and user can book the package.
+It displays the tour packages to user from which user can select and book the package.
 
 
 ## Screenshots of the game:

@@ -3,7 +3,7 @@
 
 It displays the tour packages to user from which user can select and book the package.
 
-## Screenshots of the game:
+## Snaps
 
 ![Cruiser](https://github.com/Md-Mudassir/Cruiser/blob/master/public/img/crr.JPG)
 ![Cruiser](https://github.com/Md-Mudassir/Cruiser/blob/master/public/img/cru.JPG)

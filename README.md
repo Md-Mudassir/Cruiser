@@ -4,7 +4,7 @@
 It displays the tour packages to user from which user can select and book the package.
 
 
-## Screenshots of the game:
+## Screenshots of the Application:
 ![Cruiser](https://github.com/Md-Mudassir/Cruiser/blob/master/public/img/crr.JPG)
 ![Cruiser](https://github.com/Md-Mudassir/Cruiser/blob/master/public/img/cru.JPG)
 ![Cruiser](https://github.com/Md-Mudassir/Cruiser/blob/master/public/img/cr1.JPG)

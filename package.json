@@ -1,14 +1,16 @@
 {
   "name": "cruiser",
   "version": "1.0.0",
-  "description": "Find best tours package",
+  "description": "tour package planner",
   "main": "app.js",
   "scripts": {
     "start": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon server.js",
+    "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
     "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
-  "author": "Mohammed, Parvez",
+  "author": "Mohammed,Parvez",
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",

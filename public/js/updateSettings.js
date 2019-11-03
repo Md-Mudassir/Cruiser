@@ -18,6 +18,8 @@ export const updateSettings = async (data, type) => {
 
     if (res.data.status === 'success') {
       showAlert('success', `${type.toUpperCase()} updated successfully!`);
+    } else {
+      showAlert(`Invalid password`);
     }
   } catch (err) {
     showAlert('error', err.response.data.message);

@@ -51,7 +51,7 @@ export const signup = async (name, email, password, passwordConfirm) => {
     });
 
     if (res.data.status === 'success') {
-      showAlert('success', 'Logged in successfully!');
+      showAlert('success', 'Created successfully!');
     }
   } catch (err) {
     showAlert('error', err.response.data.message);

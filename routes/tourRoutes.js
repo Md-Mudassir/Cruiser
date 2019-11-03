@@ -4,7 +4,7 @@ const tourController = require('./../controllers/tourController');
 
 const router = express.Router();
 
-router.route('/:id').get(tourController.getTour);
+// router.route('/:id').get(tourController.getTour);
 // .patch(
 //   authController.protect,
 //   authController.restrictTo('admin', 'lead-guide'),

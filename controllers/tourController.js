@@ -1,5 +1,5 @@
-const Tour = require('./../models/tourModel');
-const factory = require('./handlerFactory');
+// const Tour = require('./../models/tourModel');
+// const factory = require('./handlerFactory');
 
 // exports.getAllTours = factory.getAll(Tour);
 // exports.getTour = factory.getOne(Tour, { path: 'reviews' });

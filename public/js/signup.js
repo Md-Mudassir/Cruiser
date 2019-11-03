@@ -10,8 +10,7 @@ export const signup = async (name, email, password, passwordConfirm) => {
       data: {
         name,
         email,
-        password,
-        passwordConfirm
+        password
       }
     });
 

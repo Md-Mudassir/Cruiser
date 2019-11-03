@@ -36,3 +36,23 @@ export const logout = async () => {
     showAlert('error', 'Error logging out! Try again.');
   }
 };
+
+export const signup = async (name, email, password) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: 'http://localhost:5000/api/v1/users/signup',
+      data: {
+        name,
+        email,
+        password
+      }
+    });
+
+    if (res.data.status === 'success') {
+      showAlert('success', 'Logged in successfully!');
+    }
+  } catch (err) {
+    showAlert('error', err.response.data.message);
+  }
+};

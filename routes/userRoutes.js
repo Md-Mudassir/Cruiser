@@ -11,7 +11,9 @@ router.get('/logout', authController.logout);
 // Protect all routes after this middleware
 router.use(authController.protect);
 
+router.patch('/updateMe', userController.updateMe);
 router.get('/me', userController.getMe, userController.getUser);
+router.patch('/updateMyPassword', authController.updatePassword);
 
 router.use(authController.restrictTo('admin'));
 

@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
+const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -31,5 +32,7 @@ app.use('/api/v1/reviews', reviewRouter);
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
+
+app.use(globalErrorHandler);
 
 module.exports = app;

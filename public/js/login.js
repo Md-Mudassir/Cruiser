@@ -36,3 +36,26 @@ export const logout = async () => {
     showAlert('error', 'Error logging out! Try again.');
   }
 };
+
+export const signup = async (name, email, password, passwordConfirm) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: 'http://localhost:5000/api/v1/users/signup',
+      data: {
+        name,
+        email,
+        password,
+        passwordConfirm
+      }
+    });
+    if (password !== passwordConfirm) {
+      showAlert('error', `Password does'nt match`);
+    }
+    if (res.data.status === 'success') {
+      showAlert('success', 'Created successfully!');
+    }
+  } catch (err) {
+    showAlert('error', err.response.data.message);
+  }
+};

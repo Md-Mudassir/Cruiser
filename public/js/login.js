@@ -49,7 +49,9 @@ export const signup = async (name, email, password, passwordConfirm) => {
         passwordConfirm
       }
     });
-
+    if (password !== passwordConfirm) {
+      showAlert('error', `Password does'nt match`);
+    }
     if (res.data.status === 'success') {
       showAlert('success', 'Created successfully!');
     }

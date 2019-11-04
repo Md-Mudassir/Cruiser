@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
-const tourRouter = require('./routes/tourRoutes');
+// const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 // 3) ROUTES
 app.use('/', viewRouter);
-app.use('/api/v1/tours', tourRouter);
+// app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
 

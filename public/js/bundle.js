@@ -8396,24 +8396,28 @@ function () {
           case 3:
             res = _context3.sent;
 
-            if (res.data.status === 'success') {
-              (0, _alerts.showAlert)('success', 'Logged in successfully!');
+            if (password !== passwordConfirm) {
+              (0, _alerts.showAlert)('error', "Password does'nt match");
             }
 
-            _context3.next = 10;
+            if (res.data.status === 'success') {
+              (0, _alerts.showAlert)('success', 'Created successfully!');
+            }
+
+            _context3.next = 11;
             break;
 
-          case 7:
-            _context3.prev = 7;
+          case 8:
+            _context3.prev = 8;
             _context3.t0 = _context3["catch"](0);
             (0, _alerts.showAlert)('error', _context3.t0.response.data.message);
 
-          case 10:
+          case 11:
           case "end":
             return _context3.stop();
         }
       }
-    }, _callee3, null, [[0, 7]]);
+    }, _callee3, null, [[0, 8]]);
   }));
 
   return function signup(_x3, _x4, _x5, _x6) {
@@ -8871,7 +8875,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57258" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58247" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -43,18 +43,7 @@ block content
           +overviewBox('Participants', `${tour.maxGroupSize} people`, 'user')
           +overviewBox('Rating', `${tour.ratingsAverage} / 5`, 'star')
 
-        .overview-box__group
-          h2.heading-secondary.ma-bt-lg Your tour guides
-
-          each guide in tour.guides
-            .overview-box__detail
-              img.overview-box__img(src=`/img/users/${guide.photo}`, alt=`${guide.name}`)
-
-              - if (guide.role === 'lead-guide')
-                span.overview-box__label Lead guide
-              - if (guide.role === 'guide')
-                span.overview-box__label Tour guide
-              span.overview-box__text= guide.name
+       
 
     .description-box
       h2.heading-secondary.ma-bt-lg= `About ${tour.name} tour`
@@ -84,4 +73,4 @@ block content
       .cta__content
         h2.heading-secondary What are you waiting for?
         p.cta__text= `${tour.duration} days. 1 adventure. Infinite memories. Make it yours today!`
-        button.btn.btn--green.span-all-rows Book tour now!
+        button.btn.btn--green.span-all-rows Coming Soon..

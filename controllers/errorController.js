@@ -17,8 +17,6 @@ module.exports = (err, req, res, next) => {
   let error = { ...err };
   error.message = err.message;
 
-  if (process.env.NODE_ENV === 'development') {
-    if (error.name === 'JsonWebTokenError') error = handleJWTError();
-    sendErrorDev(err, req, res);
-  }
+  if (error.name === 'JsonWebTokenError') error = handleJWTError();
+  sendErrorDev(err, req, res);
 };

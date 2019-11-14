@@ -7,7 +7,7 @@ View: https://cruis3r.herokuapp.com/
 
 ## Authors:
 
-![Mohammed Mudassir](google.com),
+[Mohammed Mudassir](https://github.com/Md-Mudassir/),
 Parvez Shah
 
 ## Snaps

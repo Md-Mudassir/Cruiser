@@ -6,7 +6,7 @@ It displays the tour packages to user from which user can select and book the pa
 View: https://cruis3r.herokuapp.com/
 
 ### Testing:
-Email: admin@cruiser.com,
+Email: admin@cruiser.com
 Password: test1234
 
 ### [Watch Demo](https://youtu.be/eKaomj3g2Xs)

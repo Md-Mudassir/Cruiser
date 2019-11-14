@@ -7,6 +7,13 @@ View: https://cruis3r.herokuapp.com/
 
 ### [Watch Demo](https://youtu.be/eKaomj3g2Xs)
 
+### Tech Stack
+
+1. NodeJS
+2. ExpressJS
+3. MongoDB
+4. Javascript-ES6
+
 ## Authors:
 
 [Mohammed Mudassir](https://github.com/Md-Mudassir/),

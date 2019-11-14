@@ -5,6 +5,8 @@ It displays the tour packages to user from which user can select and book the pa
 
 View: https://cruis3r.herokuapp.com/
 
+### [Watch Demo](https://youtu.be/eKaomj3g2Xs)
+
 ## Authors:
 
 [Mohammed Mudassir](https://github.com/Md-Mudassir/),
